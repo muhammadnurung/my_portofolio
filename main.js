@@ -70,7 +70,10 @@ function initParticles() {
   canvas.height = window.innerHeight;
   particlesArray = [];
 
-  const numberOfParticles = Math.floor((canvas.width * canvas.height) / 20000);
+  // Kurangi particles di mobile
+  const isMobile = window.innerWidth < 768;
+  const baseParticles = Math.floor((canvas.width * canvas.height) / 20000);
+  const numberOfParticles = isMobile ? Math.min(baseParticles, 30) : baseParticles;
 
   for (let i = 0; i < numberOfParticles; i++) {
     const size = Math.random() * 2 + 1;
@@ -138,4 +141,5 @@ form.addEventListener("submit", function (e) {
     }
   );
 });
+
 
