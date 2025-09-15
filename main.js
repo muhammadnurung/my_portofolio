@@ -112,9 +112,10 @@ initParticles();
 animateParticles();
 
 AOS.init({
-  duration: 500, // durasi animasi
-  once: false, // animasi bisa muncul berkali-kali saat scroll
-  mirror: true, // animasi jalan juga saat scroll ke atas
+  duration: 800,    // kurangi durasi
+  once: false,       // animasi cuma jalan sekali
+  mirror: true,    // disable mirror
+  disable: 'mobile' // atau disable totally di mobile
 });
 
 // Inisialisasi EmailJS dengan Public Key-mu
@@ -141,5 +142,6 @@ form.addEventListener("submit", function (e) {
     }
   );
 });
+
 
 
