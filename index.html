@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — Muhammad Nurung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-900 text-gray-200 antialiased relative overflow-x-hidden min-h-screen">
+    <!-- Background Particles -->
+    <canvas id="particles-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+
+    <!-- ===== Navbar ===== -->
+    <header class="fixed top-0 left-0 right-0 bg-gray-900/80 backdrop-blur z-50 border-b border-gray-700 w-full">
+      <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <a
+          href="#"
+          class="text-base sm:text-lg md:text-xl font-bold text-indigo-400 hover:text-indigo-300 transition truncate"
+        >
+          Muhammad Nurung
+        </a>
+
+        <!-- Desktop links -->
+        <nav class="hidden md:flex items-center gap-6" aria-label="Primary">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a
+            href="assets/cv-muhammad-nurung.pdf"
+            class="hidden sm:inline-flex px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base rounded-md bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white font-medium shadow-md hover:scale-105 transform transition whitespace-nowrap"
+            download="Muhammad-Nurung-CV.pdf"
+          >
+            <span class="hidden md:inline"><i class="fa-solid fa-download mr-2"></i>Download CV</span>
+          </a>
+
+          <button
+            id="nav-toggle"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            class="md:hidden p-2 rounded-md hover:bg-gray-800 focus:bg-transparent active:bg-transparent focus:outline-none focus:ring-0"
+          >
+            <i class="fa-solid fa-bars text-gray-200"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile menu overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-gray-900 bg-opacity-95 hidden z-40 flex flex-col items-center justify-center space-y-6"
+    >
+      <a href="#home" class="mobile-link"><i class="fa-solid fa-house mr-3"></i>Home</a>
+      <a href="#about" class="mobile-link"><i class="fa-solid fa-user mr-3"></i>About</a>
+      <a href="#skills" class="mobile-link"><i class="fa-solid fa-code mr-3"></i>Skills</a>
+      <a href="#projects" class="mobile-link"><i class="fa-solid fa-diagram-project mr-3"></i>Projects</a>
+      <a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope mr-3"></i>Contact</a>
+      <a href="assets/cv-muhammad-nurung.pdf" class="mobile-link" download="Muhammad-Nurung-CV.pdf"><i class="fa-solid fa-download mr-3"></i>Download CV</a>
+    </div>
+
+    <!-- ===== Hero ===== -->
+    <main class="pt-16 sm:pt-20 w-full overflow-hidden">
+      <section id="home" class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16 lg:py-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 sm:gap-8 md:gap-12">
+          <!-- Foto (di atas untuk mobile, kanan untuk desktop) -->
+          <div class="flex justify-center md:order-2 w-full">
+            <div class="relative">
+              <img
+                src="assets/profile.jpg"
+                alt="Foto Muhammad Nurung"
+                class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 object-cover rounded-full ring-4 ring-indigo-600 shadow-xl transform transition duration-500 hover:scale-110 hover:rotate-3"
+              />
+            </div>
+          </div>
+
+          <!-- Teks -->
+          <div class="text-center md:text-left md:order-1 w-full">
+            <p class="text-indigo-400 mb-2 sm:mb-3 sm:text-lg md:text-xl lg:text-2xl sm:text-base">Hello, I'm</p>
+            <h1
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-3 sm:mb-4 text-white break-words"
+            >
+              Muhammad Nurung
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 text-gray-300">
+              I'm a <span id="typed-text" aria-live="polite" class="font-semibold text-indigo-400"></span
+              ><span class="typing-cursor">|</span>
+            </p>
+            <div class="flex flex-row gap-4 justify-center sm:justify-start flex-wrap">
+              <!-- Tombol Download CV -->
+              <a
+                href="assets/cv-muhammad-nurung.pdf"
+                download="Muhammad-Nurung-CV.pdf"
+                class="inline-flex items-center justify-center px-6 py-2 rounded-lg font-semibold bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white shadow-md hover:shadow-lg transition transform hover:scale-105"
+              >
+                <i class="fa-solid fa-download mr-2"></i> Download CV
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center px-6 py-2 rounded-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-gray-900 transition transform hover:scale-105"
+              >
+                <i class="fa-solid fa-envelope mr-2"></i> Contact Me
+              </a>
+            </div>
+            <!-- Social Media -->
+            <div class="flex gap-4 sm:gap-6 mt-4 sm:mt-6 justify-center md:justify-start">
+              <a
+                href="https://github.com/muhammadnurung"
+                target="_blank"
+                class="text-white hover:text-indigo-400 text-xl sm:text-2xl transition-colors flex-shrink-0"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://linkedin.com/in/muhammad-nurung"
+                target="_blank"
+                class="text-white hover:text-indigo-400 text-xl sm:text-2xl transition-colors flex-shrink-0"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a
+                href="https://instagram.com/nurunk8102"
+                target="_blank"
+                class="text-white hover:text-indigo-400 text-xl sm:text-2xl transition-colors flex-shrink-0"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+                            <a
+                href="https://wa.me/6288272126746"
+                target="_blank"
+                class="text-white hover:text-indigo-400 text-xl sm:text-2xl transition-colors flex-shrink-0"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+                            <a
+                href="https://facebook.com/nurunk.bvs"
+                target="_blank"
+                class="text-white hover:text-indigo-400 text-xl sm:text-2xl transition-colors flex-shrink-0"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section id="about" class="relative py-6 sm:py-16 md:py-6 text-white w-full overflow-hidden">
+        <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+          <!-- Judul -->
+          <div class="text-center mb-8 sm:mb-12">
+            <div class="flex items-center gap-4 mb-4 justify-center">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-600 text-white">
+                <i class="fa-solid fa-user text-lg"></i>
+              </span>
+              <h2 class="text-3xl sm:text-4xl font-bold">About Me</h2>
+            </div>
+            <p class="text-gray-300 max-w-4xl mx-auto text-sm sm:text-base leading-relaxed">
+              I am a fresh graduate of <span class="font-semibold text-indigo-400">Computer Engineering (D3)</span>
+              from Politeknik Negeri Sriwijaya with a strong foundation in computer systems, networking, and software
+              development. During my academic journey, I was actively involved in projects and practical work that
+              sharpened my analytical and problem-solving skills.
+              <br /><br />
+              I had the opportunity to complete an internship at
+              <span class="font-semibold text-indigo-400">PT Pupuk Sriwidjaja Palembang</span>
+              in the Department of Information Technology (July – September 2024), where I gained valuable hands-on
+              experience in IT support, system administration, and real-world project collaboration.
+              <br /><br />
+              With high enthusiasm for learning and adapting to new technologies, I am eager to start my professional
+              career and contribute positively to the IT industry.
+            </p>
+          </div>
+
+          <!-- Content -->
+          <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-10">
+            <!-- Education -->
+            <div
+              class="about-card w-full bg-white/10 border border-white/20 rounded-xl p-4 sm:p-6 backdrop-blur-md shadow-lg hover:scale-105 transform transition"
+              data-aos="fade-right"
+            >
+              <div class="flex items-start sm:items-center mb-4">
+                <img
+                  src="assets/logo-polsri.png"
+                  alt="Politeknik Negeri Sriwijaya"
+                  class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 mr-3 rounded-md flex-shrink-0"
+                />
+                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Education</h3>
+              </div>
+              <p class="text-gray-300 text-sm sm:text-base break-words">
+                <span class="font-bold text-white block sm:inline">
+                  <i class="fa-solid fa-graduation-cap text-indigo-400 text-base sm:text-lg md:text-xl mr-2"></i>
+                  Politeknik Negeri Sriwijaya</span
+                ><br />
+                Diploma in Computer Engineering<br />
+                <span class="text-xs sm:text-sm text-gray-400">September 2022 – August 2025</span>
+              </p>
+            </div>
+
+            <!-- Experience -->
+            <div
+              class="about-card w-full bg-white/10 border border-white/20 rounded-xl p-4 sm:p-6 backdrop-blur-md shadow-lg hover:scale-105 transform transition"
+              data-aos="fade-left"
+            >
+              <div class="flex items-start sm:items-center mb-4">
+                <img
+                  src="assets/logo-pusri.png"
+                  alt="PT Pupuk Sriwidjaja Palembang"
+                  class="w-5 h-6 sm:w-6 sm:h-8 md:w-7 md:h-10 mr-3 rounded-md flex-shrink-0"
+                />
+                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Experience</h3>
+              </div>
+              <p class="text-gray-300 text-sm sm:text-base break-words">
+                <span class="font-bold text-white block sm:inline"
+                  ><i class="fa-solid fa-briefcase text-indigo-400 text-base sm:text-lg md:text-2xl mr-2"></i> PT Pupuk
+                  Sriwidjaja Palembang</span
+                ><br />
+                Internship – Department of Information Technology<br />
+                <span class="text-xs sm:text-sm text-gray-400">July 2024 – September 2024</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="relative py-12 sm:py-16 md:py-20 text-white w-full overflow-hidden">
+        <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+          <!-- Judul -->
+          <div class="text-center mb-8 sm:mb-12 w-full">
+            <div class="flex items-center gap-4 mb-4 justify-center">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-600 text-white">
+                <i class="fa-solid fa-code text-lg"></i>
+              </span>
+              <h2 class="text-3xl sm:text-4xl font-bold">Skills</h2>
+            </div>
+            <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">
+              Here are some of the technical and creative skills I have developed through education, internships, and
+              personal projects.
+            </p>
+          </div>
+
+          <!-- Grid Skills -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+            <!-- HTML -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              <i class="fa-brands fa-html5 text-4xl text-orange-500 mb-3"></i>
+              <p class="font-semibold mb-2">HTML</p>
+
+              <!-- Progress Bar di bawah text -->
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[90%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- CSS -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:-rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <i class="fa-brands fa-css3-alt text-4xl text-blue-500 mb-3"></i>
+              <p class="font-semibold mb-2">CSS</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[85%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- JavaScript -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <i class="fa-brands fa-js text-4xl text-yellow-400 mb-3"></i>
+              <p class="font-semibold mb-2">JavaScript</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[75%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- PHP -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:-rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <i class="fa-brands fa-php text-4xl text-indigo-400 mb-3"></i>
+              <p class="font-semibold mb-2">PHP</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[70%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- MySQL -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <i class="fa-solid fa-database text-4xl text-green-400 mb-3"></i>
+              <p class="font-semibold mb-2">MySQL</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[80%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- C++ -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:-rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <i class="fa-solid fa-code text-4xl text-pink-400 mb-3"></i>
+              <p class="font-semibold mb-2">C++</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[65%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Photoshop -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="350"
+            >
+              <i class="fa-solid fa-image text-4xl text-blue-400 mb-3"></i>
+              <p class="font-semibold mb-2">Photoshop</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[85%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Illustrator -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:-rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <i class="fa-solid fa-pen-nib text-4xl text-red-400 mb-3"></i>
+              <p class="font-semibold mb-2">Illustrator</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[70%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Canva -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="450"
+            >
+              <i class="fa-solid fa-palette text-4xl text-purple-400 mb-3"></i>
+              <p class="font-semibold mb-2">Canva</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[90%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- MS Office -->
+            <div
+              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg hover:scale-105 hover:-rotate-1 transform transition duration-300 backdrop-blur-md"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <i class="fa-solid fa-file-word text-4xl text-green-300 mb-3"></i>
+              <p class="font-semibold mb-2">MS Office</p>
+              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[95%] transition-all duration-700"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Projects Section ===== -->
+      <section id="projects" class="relative py-16 text-white">
+        <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
+          <!-- Section Title -->
+          <div class="text-center mb-12">
+            <div class="flex items-center gap-4 mb-4 justify-center">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-600 text-white">
+                <i class="fa-solid fa-diagram-project text-lg"></i>
+              </span>
+              <h2 class="text-3xl sm:text-4xl font-bold">Project</h2>
+            </div>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+              Some of my web development and design projects, showcasing skills in front-end and back-end technologies.
+            </p>
+          </div>
+
+          <!-- Project Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card Example -->
+            <div
+              class="group bg-white/10 border border-white/20 rounded-xl p-6 backdrop-blur-md shadow-lg hover:scale-105 hover:-rotate-1 transform transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              <!-- Project Image -->
+              <div class="w-full h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="assets/project1.png"
+                  alt="Project 1"
+                  class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 group-hover:rotate-1"
+                />
+              </div>
+
+              <!-- Project Title -->
+              <h3 class="text-2xl font-semibold mb-2 flex items-center">
+                <i class="fa-solid fa-laptop-code text-indigo-400 mr-2"></i>Runkjay Games
+              </h3>
+
+              <!-- Project Description -->
+              <p class="text-gray-300 text-sm mb-3">
+                A free game download website complete with user and admin login features. It includes an admin dashboard
+                for managing games, chat, comments, and users.
+              </p>
+
+              <!-- Technologies -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-indigo-600 text-white px-2 py-1 rounded-full text-xs">HTML</span>
+                <span class="bg-indigo-500 text-white px-2 py-1 rounded-full text-xs">CSS</span>
+                <span class="bg-purple-600 text-white px-2 py-1 rounded-full text-xs">JavaScript</span>
+                <span class="bg-gray-700 text-white px-2 py-1 rounded-full text-xs">PHP</span>
+                <span class="bg-green-600 text-white px-2 py-1 rounded-full text-xs">MySQL</span>
+              </div>
+
+              <!-- Live View Button -->
+              <a
+                href="https://runk.42web.io/runkjay/index.php"
+                target="_blank"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white shadow-md hover:shadow-lg transition transform hover:scale-105"
+              >
+                <i class="fa-solid fa-eye mr-2"></i> Live View
+              </a>
+            </div>
+
+            <!-- Duplicate project cards as needed, update content & delay -->
+            <div
+              class="group bg-white/10 border border-white/20 rounded-xl p-6 backdrop-blur-md shadow-lg hover:scale-105 hover:rotate-1 transform transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="w-full h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="assets/project2.png"
+                  alt="Project 2"
+                  class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 group-hover:-rotate-1"
+                />
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 flex items-center">
+                <i class="fa-solid fa-laptop-code text-indigo-400 mr-2"></i>ChapterOne
+              </h3>
+              <p class="text-gray-300 text-sm mb-3">
+                A free manga reading website. Users can read anime manga complete with chapters. There's an admin
+                dashboard for managing manga, chapters, comments, and users.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-indigo-600 text-white px-2 py-1 rounded-full text-xs">HTML</span>
+                <span class="bg-indigo-500 text-white px-2 py-1 rounded-full text-xs">CSS</span>
+                <span class="bg-purple-600 text-white px-2 py-1 rounded-full text-xs">JavaScript</span>
+                <span class="bg-gray-700 text-white px-2 py-1 rounded-full text-xs">PHP</span>
+                <span class="bg-green-600 text-white px-2 py-1 rounded-full text-xs">MySQL</span>
+              </div>
+              <a
+                href="https://runk.42web.io/chapterone/index.php"
+                target="_blank"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-gray-900 transition transform hover:scale-105"
+              >
+                <i class="fa-solid fa-eye mr-2"></i> Live View
+              </a>
+            </div>
+
+            <!-- Project Card Example -->
+            <div
+              class="group bg-white/10 border border-white/20 rounded-xl p-6 backdrop-blur-md shadow-lg hover:scale-105 hover:-rotate-1 transform transition duration-300"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <!-- Project Image -->
+              <div class="w-full h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="assets/project3.png"
+                  alt="Project 1"
+                  class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110 group-hover:rotate-1"
+                />
+              </div>
+
+              <!-- Project Title -->
+              <h3 class="text-2xl font-semibold mb-2 flex items-center">
+                <i class="fa-solid fa-laptop-code text-indigo-400 mr-2"></i>My Firs Portofolio
+              </h3>
+
+              <!-- Project Description -->
+              <p class="text-gray-300 text-sm mb-3">
+                My first portfolio website, created using HTML, Tailwind CSS, and a simple layout, was made with
+                JavaScript to make it somewhat interactive. It's responsive on all devices.
+              </p>
+
+              <!-- Technologies -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-indigo-600 text-white px-2 py-1 rounded-full text-xs">HTML</span>
+                <span class="bg-indigo-500 text-white px-2 py-1 rounded-full text-xs">CSS</span>
+                <span class="bg-purple-600 text-white px-2 py-1 rounded-full text-xs">JavaScript</span>
+                <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Tailwind</span>
+                <span class="bg-gray-700 text-white px-2 py-1 rounded-full text-xs">GitHub</span>
+              </div>
+
+              <!-- Live View Button -->
+              <a
+                href="https://muhammadnurung.github.io/portofolio/"
+                target="_blank"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white shadow-md hover:shadow-lg transition transform hover:scale-105"
+              >
+                <i class="fa-solid fa-eye mr-2"></i> Live View
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Contact Section ===== -->
+      <section id="contact" class="relative py-20 text-white">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-20">
+          <!-- Section Title -->
+          <div class="text-center mb-12">
+            <div class="flex items-center gap-4 mb-4 justify-center">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-indigo-600 text-white">
+                <i class="fa-solid fa-envelope text-lg"></i>
+              </span>
+              <h2 class="text-3xl sm:text-4xl font-bold">Contact Me</h2>
+            </div>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+              I'm open for opportunities and collaborations. Fill out the form below and I'll get back to you as soon as
+              possible.
+            </p>
+          </div>
+
+          <!-- Contact Form -->
+          <form
+            id="contact-form"
+            class="bg-white/10 border border-white/20 rounded-xl p-6 backdrop-blur-md shadow-lg grid gap-6"
+            data-aos="fade-up"
+          >
+            <!-- Name -->
+            <div>
+              <label for="name" class="block mb-2 font-semibold">Name</label>
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-user text-indigo-400"></i>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  class="w-full px-4 py-2 rounded-md bg-white/20 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block mb-2 font-semibold">Email</label>
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-envelope text-indigo-400"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                  class="w-full px-4 py-2 rounded-md bg-white/20 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block mb-2 font-semibold">Message</label>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-comment text-indigo-400 mt-2"></i>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                  class="w-full px-4 py-2 rounded-md bg-white/20 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center px-6 py-2 rounded-lg font-semibold bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 text-white shadow-md hover:shadow-lg transition transform hover:scale-105"
+            >
+              <i class="fa-solid fa-paper-plane mr-2"></i> Send Message
+            </button>
+
+            <!-- Feedback -->
+            <p id="form-status" class="text-center mt-2 text-sm"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-gray-900/90 backdrop-blur border-t border-gray-700 py-8">
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <!-- Copyright / Text -->
+        <p class="text-gray-400 text-center md:text-left text-sm">&copy; 2025 Muhammad Nurung. All rights reserved.</p>
+
+        <!-- Social Media Icons -->
+        <div class="flex gap-6 justify-center md:justify-end">
+          <a
+            href="https://github.com/muhammadnurung"
+            target="_blank"
+            class="text-gray-400 hover:text-indigo-400 text-2xl transition transform hover:scale-110"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/muhammad-nurung"
+            target="_blank"
+            class="text-gray-400 hover:text-indigo-400 text-2xl transition transform hover:scale-110"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://instagram.com/nurunk8102"
+            target="_blank"
+            class="text-gray-400 hover:text-indigo-400 text-2xl transition transform hover:scale-110"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="mailto:nurunk8102@gmail.com"
+            class="text-gray-400 hover:text-indigo-400 text-2xl transition transform hover:scale-110"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
