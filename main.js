@@ -109,7 +109,7 @@ initParticles();
 animateParticles();
 
 AOS.init({
-  duration: 1500, // durasi animasi
+  duration: 500, // durasi animasi
   once: false, // animasi bisa muncul berkali-kali saat scroll
   mirror: true, // animasi jalan juga saat scroll ke atas
 });
@@ -138,3 +138,4 @@ form.addEventListener("submit", function (e) {
     }
   );
 });
+
