@@ -61,58 +61,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===== Background Particles =====
 const canvas = document.getElementById("particles-canvas");
-const ctx = canvas.getContext("2d");
 
-let particlesArray;
-
+// Cek apakah device mobile
 function isMobileDevice() {
-  return window.innerWidth <= 768;
+  return window.innerWidth <= 768 || 
+         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
-function initParticles() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  particlesArray = [];
+// Hanya jalankan particles jika bukan mobile
+if (!isMobileDevice()) {
+  const ctx = canvas.getContext("2d");
+  let particlesArray;
 
-  // Kurangi drastis particles di mobile
-  let numberOfParticles;
-  if (isMobileDevice()) {
-    numberOfParticles = 15; // cuma 15 particles di mobile
-  } else {
-    numberOfParticles = Math.floor((canvas.width * canvas.height) / 20000);
+  function initParticles() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    particlesArray = [];
+
+    const numberOfParticles = Math.floor((canvas.width * canvas.height) / 20000);
+
+    for (let i = 0; i < numberOfParticles; i++) {
+      const size = Math.random() * 2 + 1;
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const dx = (Math.random() - 0.5) * 0.5;
+      const dy = (Math.random() - 0.5) * 0.5;
+      particlesArray.push({ x, y, dx, dy, size });
+    }
   }
 
-  for (let i = 0; i < numberOfParticles; i++) {
-    const size = Math.random() * 2 + 1;
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const dx = (Math.random() - 0.5) * 0.5;
-    const dy = (Math.random() - 0.5) * 0.5;
-    particlesArray.push({ x, y, dx, dy, size });
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "rgba(129, 140, 248, 0.7)";
+    particlesArray.forEach((p) => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+
+    requestAnimationFrame(animateParticles);
   }
+
+  window.addEventListener("resize", initParticles);
+  initParticles();
+  animateParticles();
+} else {
+  // Hide canvas di mobile
+  canvas.style.display = 'none';
 }
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "rgba(129, 140, 248, 0.7)";
-  particlesArray.forEach((p) => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fill();
-
-    p.x += p.dx;
-    p.y += p.dy;
-
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-  });
-
-  requestAnimationFrame(animateParticles);
-}
-
-window.addEventListener("resize", initParticles);
-initParticles();
-animateParticles();
 
 AOS.init({
   duration: 800,    // kurangi durasi
@@ -145,6 +147,7 @@ form.addEventListener("submit", function (e) {
     }
   );
 });
+
 
 
 
