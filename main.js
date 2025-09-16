@@ -65,15 +65,22 @@ const ctx = canvas.getContext("2d");
 
 let particlesArray;
 
+function isMobileDevice() {
+  return window.innerWidth <= 768;
+}
+
 function initParticles() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   particlesArray = [];
 
-  // Kurangi particles di mobile
-  const isMobile = window.innerWidth < 768;
-  const baseParticles = Math.floor((canvas.width * canvas.height) / 20000);
-  const numberOfParticles = isMobile ? Math.min(baseParticles, 30) : baseParticles;
+  // Kurangi drastis particles di mobile
+  let numberOfParticles;
+  if (isMobileDevice()) {
+    numberOfParticles = 15; // cuma 15 particles di mobile
+  } else {
+    numberOfParticles = Math.floor((canvas.width * canvas.height) / 20000);
+  }
 
   for (let i = 0; i < numberOfParticles; i++) {
     const size = Math.random() * 2 + 1;
@@ -87,7 +94,7 @@ function initParticles() {
 
 function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "rgba(129, 140, 248, 0.7)"; // indigo-400 glow
+  ctx.fillStyle = "rgba(129, 140, 248, 0.7)";
   particlesArray.forEach((p) => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -96,7 +103,6 @@ function animateParticles() {
     p.x += p.dx;
     p.y += p.dy;
 
-    // rebound
     if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
     if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
   });
@@ -104,10 +110,7 @@ function animateParticles() {
   requestAnimationFrame(animateParticles);
 }
 
-// responsive
 window.addEventListener("resize", initParticles);
-
-// start
 initParticles();
 animateParticles();
 
@@ -142,6 +145,7 @@ form.addEventListener("submit", function (e) {
     }
   );
 });
+
 
 
 
