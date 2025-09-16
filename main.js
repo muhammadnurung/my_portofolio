@@ -118,7 +118,6 @@ AOS.init({
   duration: 800,    // kurangi durasi
   once: false,       // animasi cuma jalan sekali
   mirror: true,    // disable mirror
-  disable: 'mobile' // atau disable totally di mobile
 });
 
 // Inisialisasi EmailJS dengan Public Key-mu
@@ -145,6 +144,7 @@ form.addEventListener("submit", function (e) {
     }
   );
 });
+
 
 
 
