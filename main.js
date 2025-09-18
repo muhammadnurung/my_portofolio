@@ -115,9 +115,9 @@ initParticles();
 animateParticles();
 
 AOS.init({
-  duration: 800,    // kurangi durasi
-  once: false,       // animasi cuma jalan sekali
-  mirror: true,    // disable mirror
+  duration: 800, // kurangi durasi
+  once: false, // animasi cuma jalan sekali
+  mirror: true, // disable mirror
 });
 
 // Inisialisasi EmailJS dengan Public Key-mu
@@ -145,9 +145,23 @@ form.addEventListener("submit", function (e) {
   );
 });
 
+const tabs = document.querySelectorAll("#skill-tabs .nav-link");
+const skills = document.querySelectorAll(".skill-item");
 
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // reset active class
+    tabs.forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
 
+    const target = tab.dataset.tab;
 
-
-
-
+    skills.forEach((skill) => {
+      if (skill.dataset.category === target) {
+        skill.classList.remove("hidden");
+      } else {
+        skill.classList.add("hidden");
+      }
+    });
+  });
+});
