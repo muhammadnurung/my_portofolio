@@ -77,7 +77,7 @@ function initParticles() {
   // Kurangi drastis particles di mobile
   let numberOfParticles;
   if (isMobileDevice()) {
-    numberOfParticles =7; // cuma 15 particles di mobile
+    numberOfParticles =15; // cuma 15 particles di mobile
   } else {
     numberOfParticles = Math.floor((canvas.width * canvas.height) / 20000);
   }
@@ -177,5 +177,6 @@ tabs.forEach((tab) => {
     this.click(); // Trigger click event
   });
 });
+
 
 
