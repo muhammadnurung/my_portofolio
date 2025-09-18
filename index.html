@@ -249,20 +249,27 @@
             </p>
           </div>
 
+          <!-- Tabs Navigasi -->
+          <div class="flex justify-center mb-10">
+            <nav class="flex gap-6" id="skill-tabs">
+              <a href="javascript:void(0)" data-tab="frontend" class="nav-link active">Front-End</a>
+              <a href="javascript:void(0)" data-tab="backend" class="nav-link">Back-End</a>
+              <a href="javascript:void(0)" data-tab="design" class="nav-link">Design</a>
+              <a href="javascript:void(0)" data-tab="tools" class="nav-link">Tools</a>
+            </nav>
+          </div>
+
           <!-- List Skills -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- HTML -->
-            <div class="group flex items-center gap-4" data-aos="fade-up">
+            <!-- Front-End -->
+            <div class="skill-item group flex items-center gap-4" data-aos="fade-up" data-category="frontend">
               <i class="fa-brands fa-html5 text-3xl text-orange-500 w-10 text-center"></i>
               <div class="w-full">
                 <div class="flex justify-between mb-1">
                   <span class="font-semibold">HTML</span>
-                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >90%</span
-                  >
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">80%</span>
                 </div>
                 <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                  <!-- bar default kosong, isi pas hover -->
                   <div
                     class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[90%] transition-all duration-700"
                   ></div>
@@ -270,15 +277,12 @@
               </div>
             </div>
 
-            <!-- CSS -->
-            <div class="group flex items-center gap-4" data-aos="fade-up">
+            <div class="skill-item group flex items-center gap-4" data-aos="fade-up" data-category="frontend">
               <i class="fa-brands fa-css3-alt text-3xl text-blue-500 w-10 text-center"></i>
               <div class="w-full">
                 <div class="flex justify-between mb-1">
                   <span class="font-semibold">CSS</span>
-                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >85%</span
-                  >
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">80%</span>
                 </div>
                 <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
                   <div
@@ -288,15 +292,12 @@
               </div>
             </div>
 
-            <!-- JavaScript -->
-            <div class="group flex items-center gap-4" data-aos="fade-up">
+            <div class="skill-item group flex items-center gap-4" data-aos="fade-up" data-category="frontend">
               <i class="fa-brands fa-js text-3xl text-yellow-400 w-10 text-center"></i>
               <div class="w-full">
                 <div class="flex justify-between mb-1">
                   <span class="font-semibold">JavaScript</span>
-                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >75%</span
-                  >
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">70%</span>
                 </div>
                 <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
                   <div
@@ -306,15 +307,28 @@
               </div>
             </div>
 
-            <!-- PHP -->
-            <div class="group flex items-center gap-4" data-aos="fade-up">
+            <div class="skill-item group flex items-center gap-4" data-aos="fade-up" data-category="frontend">
+              <i class="fa-solid fa-wind text-3xl text-sky-400 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Tailwind</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">70%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[75%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back-End -->
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="backend">
               <i class="fa-brands fa-php text-3xl text-indigo-400 w-10 text-center"></i>
               <div class="w-full">
                 <div class="flex justify-between mb-1">
                   <span class="font-semibold">PHP</span>
-                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >70%</span
-                  >
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">70%</span>
                 </div>
                 <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
                   <div
@@ -324,15 +338,12 @@
               </div>
             </div>
 
-            <!-- MySQL -->
-            <div class="group flex items-center gap-4" data-aos="fade-up">
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="backend">
               <i class="fa-solid fa-database text-3xl text-green-400 w-10 text-center"></i>
               <div class="w-full">
                 <div class="flex justify-between mb-1">
                   <span class="font-semibold">MySQL</span>
-                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >80%</span
-                  >
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">70%</span>
                 </div>
                 <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
                   <div
@@ -342,7 +353,158 @@
               </div>
             </div>
 
-            <!-- Tambah skill lain sama format di atas -->
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="backend">
+              <i class="fa-solid fa-server text-3xl text-orange-500 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">phpMyAdmin</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">70%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[80%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="backend">
+              <i class="fa-brands fa-laravel text-3xl text-red-600 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Laravel</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">60%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[80%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Design -->
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="design">
+              <i class="fa-solid fa-image text-3xl text-blue-400 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Photoshop</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">60%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[85%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="design">
+              <i class="fa-solid fa-pen-nib text-3xl text-red-400 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Illustrator</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">70%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[70%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="design">
+              <i class="fa-brands fa-figma text-3xl text-pink-400 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Figma</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">60%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[90%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="design">
+              <i class="fa-solid fa-palette text-3xl text-purple-400 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Canva</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">90%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[90%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="tools">
+              <i class="fa-solid fa-code text-3xl text-sky-500 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">VS Code</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">90%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[95%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="tools">
+              <i class="fa-solid fa-file-word text-3xl text-blue-600 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Word</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">90%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[95%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="tools">
+              <i class="fa-solid fa-file-excel text-3xl text-green-600 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Excel</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">70%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[95%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="skill-item group flex items-center gap-4 hidden" data-aos="fade-up" data-category="tools">
+              <i class="fa-solid fa-file-powerpoint text-3xl text-orange-600 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Power Point</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition">80%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[95%] transition-all duration-700"
+                  ></div>
+                </div>
+              </div>
+            </div>            
+
           </div>
         </div>
       </section>
