@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Portfolio — Muhammad Nurung</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -64,7 +64,9 @@
       <a href="#skills" class="mobile-link"><i class="fa-solid fa-code mr-3"></i>Skills</a>
       <a href="#projects" class="mobile-link"><i class="fa-solid fa-diagram-project mr-3"></i>Projects</a>
       <a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope mr-3"></i>Contact</a>
-      <a href="assets/cv-muhammad-nurung.pdf" class="mobile-link" download="Muhammad-Nurung-CV.pdf"><i class="fa-solid fa-download mr-3"></i>Download CV</a>
+      <a href="assets/cv-muhammad-nurung.pdf" class="mobile-link" download="Muhammad-Nurung-CV.pdf"
+        ><i class="fa-solid fa-download mr-3"></i>Download CV</a
+      >
     </div>
 
     <!-- ===== Hero ===== -->
@@ -133,14 +135,14 @@
               >
                 <i class="fa-brands fa-instagram"></i>
               </a>
-                            <a
+              <a
                 href="https://wa.me/6288272126746"
                 target="_blank"
                 class="text-white hover:text-indigo-400 text-xl sm:text-2xl transition-colors flex-shrink-0"
               >
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
-                            <a
+              <a
                 href="https://facebook.com/nurunk.bvs"
                 target="_blank"
                 class="text-white hover:text-indigo-400 text-xl sm:text-2xl transition-colors flex-shrink-0"
@@ -247,149 +249,100 @@
             </p>
           </div>
 
-          <!-- Grid Skills -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+          <!-- List Skills -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- HTML -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-brands fa-html5 text-4xl text-orange-500 mb-3"></i>
-              <p class="font-semibold mb-2">HTML</p>
-
-              <!-- Progress Bar di bawah text -->
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[90%] transition-all duration-700"
-                ></div>
+            <div class="group flex items-center gap-4" data-aos="fade-up">
+              <i class="fa-brands fa-html5 text-3xl text-orange-500 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">HTML</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >90%</span
+                  >
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <!-- bar default kosong, isi pas hover -->
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[90%] transition-all duration-700"
+                  ></div>
+                </div>
               </div>
             </div>
 
             <!-- CSS -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-brands fa-css3-alt text-4xl text-blue-500 mb-3"></i>
-              <p class="font-semibold mb-2">CSS</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[85%] transition-all duration-700"
-                ></div>
+            <div class="group flex items-center gap-4" data-aos="fade-up">
+              <i class="fa-brands fa-css3-alt text-3xl text-blue-500 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">CSS</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >85%</span
+                  >
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[85%] transition-all duration-700"
+                  ></div>
+                </div>
               </div>
             </div>
 
             <!-- JavaScript -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-brands fa-js text-4xl text-yellow-400 mb-3"></i>
-              <p class="font-semibold mb-2">JavaScript</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[75%] transition-all duration-700"
-                ></div>
+            <div class="group flex items-center gap-4" data-aos="fade-up">
+              <i class="fa-brands fa-js text-3xl text-yellow-400 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">JavaScript</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >75%</span
+                  >
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[75%] transition-all duration-700"
+                  ></div>
+                </div>
               </div>
             </div>
 
             <!-- PHP -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-brands fa-php text-4xl text-indigo-400 mb-3"></i>
-              <p class="font-semibold mb-2">PHP</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[70%] transition-all duration-700"
-                ></div>
+            <div class="group flex items-center gap-4" data-aos="fade-up">
+              <i class="fa-brands fa-php text-3xl text-indigo-400 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">PHP</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >70%</span
+                  >
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[70%] transition-all duration-700"
+                  ></div>
+                </div>
               </div>
             </div>
 
             <!-- MySQL -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-solid fa-database text-4xl text-green-400 mb-3"></i>
-              <p class="font-semibold mb-2">MySQL</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[80%] transition-all duration-700"
-                ></div>
+            <div class="group flex items-center gap-4" data-aos="fade-up">
+              <i class="fa-solid fa-database text-3xl text-green-400 w-10 text-center"></i>
+              <div class="w-full">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">MySQL</span>
+                  <span class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >80%</span
+                  >
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[80%] transition-all duration-700"
+                  ></div>
+                </div>
               </div>
             </div>
 
-            <!-- C++ -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-solid fa-code text-4xl text-pink-400 mb-3"></i>
-              <p class="font-semibold mb-2">C++</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[65%] transition-all duration-700"
-                ></div>
-              </div>
-            </div>
-
-            <!-- Photoshop -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-solid fa-image text-4xl text-blue-400 mb-3"></i>
-              <p class="font-semibold mb-2">Photoshop</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[85%] transition-all duration-700"
-                ></div>
-              </div>
-            </div>
-
-            <!-- Illustrator -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-solid fa-pen-nib text-4xl text-red-400 mb-3"></i>
-              <p class="font-semibold mb-2">Illustrator</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[70%] transition-all duration-700"
-                ></div>
-              </div>
-            </div>
-
-            <!-- Canva -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-solid fa-palette text-4xl text-purple-400 mb-3"></i>
-              <p class="font-semibold mb-2">Canva</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[90%] transition-all duration-700"
-                ></div>
-              </div>
-            </div>
-
-            <!-- MS Office -->
-            <div
-              class="group relative bg-white/10 border border-white/20 rounded-xl p-6 text-center shadow-lg backdrop-blur-sm"
-              data-aos="fade-up"
-            >
-              <i class="fa-solid fa-file-word text-4xl text-green-300 mb-3"></i>
-              <p class="font-semibold mb-2">MS Office</p>
-              <div class="w-full bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  class="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full w-0 group-hover:w-[95%] transition-all duration-700"
-                ></div>
-              </div>
-            </div>
+            <!-- Tambah skill lain sama format di atas -->
           </div>
         </div>
       </section>
@@ -670,4 +623,3 @@
     <script src="main.js"></script>
   </body>
 </html>
-
