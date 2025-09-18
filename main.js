@@ -145,17 +145,23 @@ form.addEventListener("submit", function (e) {
   );
 });
 
+// Ganti JavaScript tab section yang lama dengan ini
 const tabs = document.querySelectorAll("#skill-tabs .nav-link");
 const skills = document.querySelectorAll(".skill-item");
 
 tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    // reset active class
+  tab.addEventListener("click", function(e) {
+    e.preventDefault();
+    
+    // Reset active class
     tabs.forEach((t) => t.classList.remove("active"));
-    tab.classList.add("active");
+    
+    // Set active
+    this.classList.add("active");
 
-    const target = tab.dataset.tab;
+    const target = this.dataset.tab;
 
+    // Show/hide skills
     skills.forEach((skill) => {
       if (skill.dataset.category === target) {
         skill.classList.remove("hidden");
@@ -164,4 +170,11 @@ tabs.forEach((tab) => {
       }
     });
   });
+  
+  // Tambahan untuk mobile
+  tab.addEventListener("touchend", function(e) {
+    e.preventDefault();
+    this.click(); // Trigger click event
+  });
 });
+
